@@ -24,5 +24,11 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: Preview
+        run: yarn preview --port 3000
+
+      - name: Netstat
+        run: netstat -nltp | grep 3000
+
       - name: Lighthouse CI
         run: yarn dlx @lhci/cli autorun
